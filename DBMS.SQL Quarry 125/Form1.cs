@@ -15,11 +15,11 @@ namespace DBMS.SQL_Quarry_125
         //method สำหรับเชื่อมต่อ
         private void connect()
         {
-            string server = @".\LAPTOP-5N08LR59\SQLEXPRESS";
+            string server = @".\SQLEXPRESS";
             string db = "Minimart";
             string strCon = string.Format(@"Data Source={0}; Initial Catalog={1};"
-                      + "Integrated Security=True", server, db);
-            conn.ConnectionString = strCon;
+                      + "Integrated Security=True;Encrypt=False", server, db);
+            conn = new SqlConnection(strCon);
             conn.Open();
         }
 
